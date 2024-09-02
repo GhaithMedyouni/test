@@ -1,15 +1,12 @@
 import Link from 'next/link';
-import { Button, buttonVariants } from './ui/button';
+import {  buttonVariants } from './ui/button';
 import { HandMetal } from 'lucide-react';
-import { get } from 'http';
-import { getServerSession } from 'next-auth';
-import { authOptions } from '@/lib/auth';
-import { signOut } from 'next-auth/react';
-import UserAccountnav from './UserAccountnav';
+
+
 
 
 const Navbar = async () => {
-  const session = await getServerSession(authOptions);
+  
   return (
     <div className=' bg-zinc-100 py-2 border-b border-s-zinc-200 fixed w-full z-10 top-0' style={{ padding: '16px', margin: 'auto' }}>
       <div className='container flex items-center justify-between'>
@@ -17,15 +14,12 @@ const Navbar = async () => {
          <Link href='/'>
           <HandMetal/>
          </Link>
-        {session?.user ? (
-          
-          <UserAccountnav />
-        ) : (
+        
           
           <Link className={buttonVariants()} href='/sign-in'>
             Sign in
           </Link>
-        )}
+        
         
       </div>
     </div>

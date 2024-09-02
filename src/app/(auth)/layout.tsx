@@ -1,3 +1,4 @@
+import Navbar from '@/components/Navbar';
 import { FC, ReactNode } from 'react';
 
 interface AuthLayoutProps {
@@ -5,7 +6,16 @@ interface AuthLayoutProps {
 }
 
 const AuthLayout: FC<AuthLayoutProps> = ({ children }) => {
-  return <div className='bg-slate-200 p-10 rounded-md'>{children}</div>;
+  return (
+    <div className='h-screen flex flex-col justify-center items-center'>
+      <Navbar/>
+      <div className='bg-slate-200 p-10 rounded-md'>
+      
+      {children}
+    </div>
+    </div>
+    
+  )
 };
 
 export default AuthLayout;

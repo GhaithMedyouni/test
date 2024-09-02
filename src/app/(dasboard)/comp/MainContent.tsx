@@ -62,7 +62,7 @@ const DashboardPage: React.FC = () => {
 
   return (
     <div className="container mx-auto p-4" style={{ padding: '100px', margin: 'auto' }}>
-      <h1 className="text-2xl font-bold mb-4">Dashboard</h1>
+      {/* <h1 className="text-2xl font-bold mb-4">Dashboard</h1> */}
 
       <div className="mb-8">
         <h2 className="text-xl font-bold mb-4">Utilisateurs Actifs au Fil du Temps</h2>
