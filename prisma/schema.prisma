@@ -7,6 +7,21 @@ generator client {
   provider = "prisma-client-js"
 }
 
+// schema.prisma
+model Statistique {
+  id              Int      @id @default(autoincrement())
+  date            DateTime
+  userActif       Int
+  vente           Int
+  revenus         Float
+  nouveauxInscrits Int
+
+  @@unique([date, userActif]) // Contrainte unique composite
+}
+
+
+
+
 model User {
   id          Int    @id @default(autoincrement())
   email       String @unique
