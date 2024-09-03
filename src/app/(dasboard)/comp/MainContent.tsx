@@ -65,12 +65,13 @@ const DashboardPage: React.FC = () => {
       {/* <h1 className="text-2xl font-bold mb-4">Dashboard</h1> */}
 
       <div className="mb-8">
-        <h2 className="text-xl font-bold mb-4">Utilisateurs Actifs au Fil du Temps</h2>
+      <h2 className="text-lg font-semibold text-red-600 mb-4">Utilisateurs Actifs au Fil du Temps</h2>
+
         <LineChart data={lineChartData} />
       </div>
 
       <div className="mb-12 pt-6"> {/* Adjusted margin-top and padding-top */}
-        <h2 className="text-xl font-bold mb-4">Table des Utilisateurs Actifs</h2>
+        <h2 className="text-lg font-semibold text-red-600 mb-4">Table des Utilisateurs Actifs</h2>
         <DataTable
        // Ensure to pass columns to DataTable
           data={datatableData}
@@ -78,12 +79,12 @@ const DashboardPage: React.FC = () => {
       </div>
 
       <div className="mb-8">
-        <h2 className="text-xl font-bold mb-4">Ventes par Jour</h2>
+        <h2 className="text-lg font-semibold text-red-600 mb-4">Ventes par Jour</h2>
         <ColumnChart data={columnChartData} />
       </div>
 
       <div className="mb-8">
-        <h2 className="text-xl font-bold mb-4">Répartition des Revenus</h2>
+        <h2 className="text-lg font-semibold text-red-600 mb-4">Répartition des Revenus</h2>
         <PieChart data={pieChartData} />
       </div>
     </div>
