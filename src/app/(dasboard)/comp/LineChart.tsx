@@ -1,17 +1,17 @@
 import React, { useEffect } from 'react';
 import { create, useTheme } from '@amcharts/amcharts4/core';
 import { XYChart, DateAxis, ValueAxis, LineSeries, XYCursor, XYChartScrollbar } from '@amcharts/amcharts4/charts';
-import AnimatedTheme from '@amcharts/amcharts4/themes/animated'; // Corrected import for default export
+import AnimatedTheme from '@amcharts/amcharts4/themes/animated';
 
 interface LineChartProps {
   data: { date: string; value: number }[];
 }
 
 const LineChart: React.FC<LineChartProps> = ({ data }) => {
-  useEffect(() => {
-    // Apply the animated theme
-    useTheme(AnimatedTheme);
+  // Appliquer le thème ici au début du composant
+  useTheme(AnimatedTheme);
 
+  useEffect(() => {
     const chart = create('lineChartDiv', XYChart);
 
     chart.data = data;
@@ -33,7 +33,7 @@ const LineChart: React.FC<LineChartProps> = ({ data }) => {
     series.tooltipText = '{valueY}';
 
     chart.cursor = new XYCursor();
-    chart.scrollbarX = new (XYChartScrollbar); // Corrected scrollbar usage
+    chart.scrollbarX = new XYChartScrollbar();
 
     return () => {
       chart.dispose();

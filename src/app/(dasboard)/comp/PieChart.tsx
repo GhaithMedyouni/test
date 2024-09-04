@@ -1,17 +1,17 @@
 import React, { useEffect } from 'react';
 import { create, useTheme } from '@amcharts/amcharts4/core';
 import { PieChart as AmPieChart, PieSeries } from '@amcharts/amcharts4/charts';
-import AnimatedTheme from '@amcharts/amcharts4/themes/animated'; // Corrected import for default export
+import AnimatedTheme from '@amcharts/amcharts4/themes/animated';
 
 interface PieChartProps {
   data: { category: string; value: number }[];
 }
 
 const PieChart: React.FC<PieChartProps> = ({ data }) => {
-  useEffect(() => {
-    // Apply the animated theme
-    useTheme(AnimatedTheme);
+  // Appliquer le thème ici au début du composant
+  useTheme(AnimatedTheme);
 
+  useEffect(() => {
     const chart = create('pieChartDiv', AmPieChart);
 
     chart.data = data;

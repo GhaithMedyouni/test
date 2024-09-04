@@ -1,5 +1,3 @@
-// components/Footer.tsx
-
 import React from 'react';
 import { FiFacebook, FiTwitter, FiInstagram, FiLinkedin } from 'react-icons/fi';
 
@@ -11,7 +9,7 @@ const Footer: React.FC = () => {
         <div className="text-center md:text-left mb-4 md:mb-0">
           <h5 className="text-lg font-semibold">À propos de l’application</h5>
           <p className="text-sm">
-            Notre application analytique fournit des insights détaillés pour une meilleure prise de décision.
+            &copy; 2024 Votre Entreprise - Panneau d&apos;administration analytique avec tableau de bord et gestion sécurisée des utilisateurs.
           </p>
         </div>
 

@@ -3,17 +3,17 @@
 import React, { useEffect } from 'react';
 import { create, useTheme } from '@amcharts/amcharts4/core';
 import { XYChart, DateAxis, ValueAxis, ColumnSeries, XYCursor, XYChartScrollbar } from '@amcharts/amcharts4/charts';
-import AnimatedTheme from '@amcharts/amcharts4/themes/animated'; // Corrected import for default export
+import AnimatedTheme from '@amcharts/amcharts4/themes/animated';
 
 interface ColumnChartProps {
   data: { date: string; value: number }[];
 }
 
 const ColumnChart: React.FC<ColumnChartProps> = ({ data }) => {
-  useEffect(() => {
-    // Apply the animated theme
-    useTheme(AnimatedTheme);
+  // Appliquer le thème ici au début du composant
+  useTheme(AnimatedTheme);
 
+  useEffect(() => {
     const chart = create('columnChartDiv', XYChart);
 
     chart.data = data;
@@ -35,7 +35,7 @@ const ColumnChart: React.FC<ColumnChartProps> = ({ data }) => {
     series.tooltipText = '{valueY}';
 
     chart.cursor = new XYCursor();
-    chart.scrollbarX = new XYChartScrollbar(); // Correct usage of Scrollbar
+    chart.scrollbarX = new XYChartScrollbar();
 
     return () => {
       chart.dispose();
